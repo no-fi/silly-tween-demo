@@ -13,11 +13,6 @@ local quantum = 1 / 60
 local elapsed = 0
 
 function love.update(dt)
-  elapsed = elapsed + dt
-  while elapsed >= quantum do
-    r = r + .07
-    elapsed = elapsed - quantum
-  end
   t:update(dt)
 end
 
