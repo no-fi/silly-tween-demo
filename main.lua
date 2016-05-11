@@ -1,6 +1,6 @@
 local tween = require('tween')
 local ghost = nil
-local gd = { sx = 1, sy = 1, r = 0, a = 0 }
+local gd = { sx = 1, sy = 1, r = 0, a = 128 }
 local r = 0
 local t = tween.new(3, gd, { sx = 15, sy = 15, r = math.pi * 4, a = 255}, 'inBounce')
 
@@ -14,6 +14,10 @@ local elapsed = 0
 
 function love.update(dt)
   t:update(dt)
+end
+
+function love.keypressed(key)
+  t:reset()
 end
 
 function love.draw()
